@@ -1,0 +1,13 @@
+﻿namespace EmployeeManagementSystem.DTOs
+{
+    public class UpdateEmployeeDto
+    {
+        public string Name { get; set; } = string.Empty;
+
+        public string Department { get; set; } = string.Empty;
+
+        public decimal Salary { get; set; }
+
+        public string Email { get; set; } = string.Empty;
+    }
+}
