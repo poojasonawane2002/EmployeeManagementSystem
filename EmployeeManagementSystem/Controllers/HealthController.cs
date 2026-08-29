@@ -406,7 +406,7 @@ namespace EmployeeManagementSystem.Controllers
             await _context.Employees.AddAsync(employee);
             await _context.SaveChangesAsync();
 
-            return Ok(employee);
+            return CreatedAtAction(nameof(GetByIdAsync), new { id = employee.Id }, employee);
         }
 
         [HttpPut("updatedto/{id}")]
