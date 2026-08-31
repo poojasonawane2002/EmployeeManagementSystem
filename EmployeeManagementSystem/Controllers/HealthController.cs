@@ -392,6 +392,8 @@ namespace EmployeeManagementSystem.Controllers
             return Ok("Employee Deleted Successfully");
         }
 
+        // KAN-8: Create Employee API
+
         [HttpPost("createdto")]
         public async Task<IActionResult> CreateEmployeeDto(CreateEmployeeDto dto)
         {
@@ -406,7 +408,7 @@ namespace EmployeeManagementSystem.Controllers
             await _context.Employees.AddAsync(employee);
             await _context.SaveChangesAsync();
 
-            return Ok(employee);
+            return CreatedAtAction(nameof(GetByIdAsync), new { id = employee.Id }, employee);
         }
 
         [HttpPut("updatedto/{id}")]
