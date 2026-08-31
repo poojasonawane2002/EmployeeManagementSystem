@@ -392,6 +392,8 @@ namespace EmployeeManagementSystem.Controllers
             return Ok("Employee Deleted Successfully");
         }
 
+        // KAN-8: Create Employee API
+
         [HttpPost("createdto")]
         public async Task<IActionResult> CreateEmployeeDto(CreateEmployeeDto dto)
         {
